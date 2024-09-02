@@ -1,7 +1,8 @@
 <?php
 session_start();
-$_SESSION["user"] = "Admin";
-$_SESSION["pass"] = "12345";
+$_SESSION["user"] = "Ademiro";
+$_SESSION["pass"] = "1234567";
+$_SESSION["date"] = date('d/m/Y');
 ?>
 
 <DOCTYPE html>
@@ -21,10 +22,10 @@ $_SESSION["pass"] = "12345";
         <main>
             <form action="login.php" method="post">
                 <label for="usuario">Usuário:</label>
-                <input type="text" name="usuario" id="usuario" placeholder="Usuário">
+                <input type="text" name="usuario" id="usuario" placeholder="Ademiro">
 
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha" placeholder="Senha" pattern="[0-9]+">
+                <input type="password" name="senha" id="senha" placeholder="1234567" pattern="[0-9]+" minlength="7" maxlength="7">
 
                 <input type="submit" value="Login" class="btn">
             </form>

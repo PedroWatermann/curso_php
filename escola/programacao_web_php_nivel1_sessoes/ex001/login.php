@@ -1,3 +1,5 @@
+<!-- Apenas ignore o nome das variáveis -->
+
 <?php
     session_start();
 ?>
@@ -22,20 +24,21 @@
             {
                 $usua = $_POST["usuario"] ?? "";
                 $senh = $_POST["senha"] ?? "";
+                $data = $_SESSION["date"];
+                date_default_timezone_set('America/Sao_Paulo');
+                $hora = date('H:i:s');
                 if ($usua == $_SESSION["user"] && $senh == $_SESSION["pass"])
                 {
-                    echo "<p>Usuário logado com sucesso!</p>";
+                    echo "<p>Usuário logado com sucesso em $data às $hora.</p>";
                 }
                 else 
                 {
                     echo "<p>Usuário não cadastrado.</p>";
-                    echo "
-                        <script>
-                            history.go(index.php);
-                        </script>";
                 }
             }
         ?>
+        <br>
+        <a href="javascript:history.go(-1)">&lArr; Voltar</a>
     </main>
 </body>
 

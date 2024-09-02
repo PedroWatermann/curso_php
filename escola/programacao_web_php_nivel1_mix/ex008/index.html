@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Music</h1>
+    </header>
+
+    <main>
+        <form action="music.php" method="post">
+            <table id="dinamic">
+                <tr>
+                    <td>Escolha o estilo</td>
+                    <td>
+                        <select name="estilo" id="estilo">
+                            <option value="Samba">Samba</option>
+                            <option value="Pagode">Pagode</option>
+                            <option value="Forró">Forró</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Blues">Blues</option>
+                            <option value="Gospel">Gospel</option>
+                            <option value="Eletrônica">Eletrônica</option>
+                            <option value="Funk">Funk</option>
+                            <option value="Country">Country</option>
+                            <option value="Reggae">Reggae</option>
+                            <option value="Sertanejo">Sertnejo</option>
+                            <option value="Erudita">Erudita</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Hip-Hop">Hip Hop</option>
+                            <option value="Rap">Rap</option>
+                            <option value="Metal">Metal</option>
+                            <option value="Heavy Metal">Heavy Metal</option>
+                            <option value="MPB">MPB</option>
+                            <option value="Dance">Dance</option>
+                            <option value="Axe">Axé</option>
+                            <option value="Soul">Soul</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">Digite os artistas</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="artista1" id="artista1"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="artista2" id="artista2"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="artista3" id="artista3"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="artista4" id="artista4"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="artista5" id="artista5"></td>
+                </tr>
+            </table>
+            <input type="submit" value="Mostrar" id="btn">
+        </form>
+    </main>
+</body>
+</html>

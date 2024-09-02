@@ -48,7 +48,7 @@
         $resto %= 5;
         ?>
 
-        <h2>Saque de <?=numfmt_format_currency($padrao, $valor, "BRL")?> realizado</h2>
+        <h2>Saque de <?= numfmt_format_currency($padrao, $valor, "BRL") ?> realizado</h2>
         <p>Você receberá as seguintes notas:</p>
         <ul>
             <li><img class="nota" src="imagens/100-reais.jpg" alt="100 reais"> <strong>x <?= $_100 ?></strong></li>

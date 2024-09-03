@@ -33,7 +33,7 @@
                 }
                 else 
                 {
-                    echo "<p>Usuário não cadastrado.</p>";
+                    echo "<p>Usuário não encontrado!</p>";
                 }
             }
         ?>

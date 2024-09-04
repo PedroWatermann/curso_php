@@ -19,9 +19,18 @@
             width: 200px;
             height: 200px;
         }
+        main {
+            display: flex;
+            width: 600px;
+            height: 300px;
+            /* border-radius: 15px; */
+            overflow: visible;
+        }
         a {
             text-decoration: none;
             color: black;
+            margin: 3px;
+            text-align: center;
         }
     </style>
 </head>
@@ -55,7 +64,10 @@
             <img src="imagens/peixe.jpg" alt="Peixe">
             <figcaption>Peixes</figcaption>
         </a>
-
     </main>
+    
+    <footer>
+        <a href="listar_animais.php"><button>Listar animais</button></a>
+    </footer>
 </body>
 </html>

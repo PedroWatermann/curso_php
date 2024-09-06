@@ -36,17 +36,24 @@ unset($_SESSION["usuLogado"]);
     <main>
         <form action="<? $_SERVER["PHP_SELF"] ?>" method="post">
             <label for="user">Usuário:</label>
-            <input type="text" name="user" id="user">
+            <input type="text" name="user" id="user" placeholder="Primeiro nome">
 
             <label for="password">Senha:</label>
-            <input type="password" name="password" id="password">
+            <input type="password" name="password" id="password" placeholder="Nº da chamada">
 
             <input type="submit" name="submit" value="Login">
         </form>
     </main>
 
     <?php
-    $_SESSION["usuarios"] = $usuarios = ["Ana", "Erick", "Luanna", "Pedro", "Victor", "Walter"];
+    $_SESSION["usuarios"] = $usuarios = [
+        "Ana", 
+        "Erick", 
+        "Luanna", 
+        "Pedro", 
+        "Victor", 
+        "Walter"
+    ];
     $_SESSION["senhas"] = $senhas = [
         "Ana" => "04",
         "Erick" => "05",
@@ -55,9 +62,30 @@ unset($_SESSION["usuLogado"]);
         "Victor" => "21",
         "Walter" => "23"
     ];
-    $_SESSION["cidades"] = [];
-    $_SESSION["estados"] = [];
-    $_SESSION["paises"] = [];
+    $_SESSION["cidades"] = [
+        "Ana" => [], 
+        "Erick" => [], 
+        "Luanna" => [], 
+        "Pedro" => [], 
+        "Victor" => [], 
+        "Walter" => []
+    ];
+    $_SESSION["estados"] = [
+        "Ana" => [], 
+        "Erick" => [], 
+        "Luanna" => [], 
+        "Pedro" => [], 
+        "Victor" => [], 
+        "Walter" => []
+    ];
+    $_SESSION["paises"] = [
+        "Ana" => [], 
+        "Erick" => [], 
+        "Luanna" => [], 
+        "Pedro" => [], 
+        "Victor" => [], 
+        "Walter" => []
+    ];
 
     if (isset($_POST["user"]) && isset($_POST["password"])) {
         $usuario = $_POST["user"];

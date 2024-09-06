@@ -9,7 +9,6 @@ if (is_null($usu)) {
         </script>
     ";
 } else {
-
 }
 ?>
 
@@ -136,7 +135,7 @@ if (is_null($usu)) {
 
             // unset($_SESSION["usuarios"]);
             // unset($_SESSION["senhas"]);
-            
+
             // var_dump($_SESSION["usuarios"]);
             // var_dump($_SESSION["senha"]);
             // echo "<br><br>";

@@ -16,11 +16,18 @@
 
     <main>
         <?php
-        $id = $_GET["id"];
+        if (isset($_GET["id"])) {
+            $id = $_GET["id"];
+        } elseif (isset($_POST["id"])) {
+            $id = $_POST["id"];
+        } else {
+            echo "<script>alert('ID não encontrado!'); location.href='listar.php';</script>";
+            exit;
+        }
         ?>
 
         <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
-            <input type="hidden" name="id" value="<?= $_GET["id"] ?>">
+            <input type="hidden" name="id" value="<?= $id ?>">
 
             <label for="novoNome">Nome:</label>
             <input type="text" name="novoNome" id="novoNome" pattern="[a-zA-ZÀ-ÿ ]+" title="Somente letras são permitidas." autocomplete="off" value="<?= $_SESSION["nomes"][$id] ?>">
@@ -28,7 +35,7 @@
             <label for="novaIdade">Idade:</label>
             <input type="number" name="novaIdade" id="novaIdade" min="0" step="1" value="<?= $_SESSION["idades"][$id] ?>">
 
-            <button onclick="history.go(-1); <?php session_abort(); ?>">&cross; Cancelar</button>
+            <button onclick="history.go(-1)">&cross; Cancelar</button>
             <input type="submit" value="&check; Editar" name="submit">
         </form>
     </main>
@@ -47,7 +54,7 @@
             echo "
                 <script>
                     alert('Aluno editado com sucesso!');
-                    // location.href='listar.php';
+                    location.href='listar.php';
                 </script>
             ";
         } else {

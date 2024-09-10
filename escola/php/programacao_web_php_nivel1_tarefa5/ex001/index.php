@@ -1,10 +1,10 @@
 <?php
 session_start();
 if (!isset($_SESSION["nomes"])) {
-    $_SESSION["nomes"];
+    $_SESSION["nomes"] = [];
 }
 if (!isset($_SESSION["idades"])) {
-    $_SESSION["idades"];
+    $_SESSION["idades"] = [];
 }
 if (!isset($_SESSION["ids"])) {
     $_SESSION["ids"] = 1;

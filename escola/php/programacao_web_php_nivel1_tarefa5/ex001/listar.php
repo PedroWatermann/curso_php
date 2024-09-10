@@ -28,16 +28,24 @@
                 <th colspan="2">Ação</th>
             </thead>
             <?php
-            foreach ($nomes as $keynomes => $nome) {
+            if (empty($nomes)) {
                 echo "
-                        <tr>
-                            <td>$keynomes</td>
-                            <td>$nome</td>
-                            <td>$idades[$keynomes]</td>
-                            <td><button onclick='location.href=\"editar.php?id=$keynomes\"'>Editar</button></td>
-                            <td><button onclick='location.href=\"excluir.php?id=$keynomes\"'>Excluir</button></td>
-                        </tr>
-                    ";
+                    <tr>
+                        <td colspan='4'>Nenhum aluno cadastrado!</td>
+                    </tr>
+                ";
+            } else {
+                foreach ($nomes as $keynomes => $nome) {
+                    echo "
+                            <tr>
+                                <td>$keynomes</td>
+                                <td>$nome</td>
+                                <td>$idades[$keynomes]</td>
+                                <td><button onclick='location.href=\"editar.php?id=$keynomes\"'>Editar</button></td>
+                                <td><button onclick='location.href=\"excluir.php?id=$keynomes\"'>Excluir</button></td>
+                            </tr>
+                        ";
+                }
             }
             ?>
         </table>

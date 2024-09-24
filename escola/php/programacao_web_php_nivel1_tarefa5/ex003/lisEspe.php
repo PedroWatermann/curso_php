@@ -1,7 +1,15 @@
-
-
-
-<?php session_start() ?>
+<?php
+session_start();
+if (empty($_SESSION["grupos"])) {
+    echo "
+        <script>
+            alert('Cadastre um grupo primeiro!');
+            history.go(-1);
+        </script>
+    ";
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -46,9 +54,9 @@
                         if (empty($value)) {
                             echo "<li>". ucfirst($key) ." => Nenhuma espécie cadastrada!</li>";
                         } else {
-                            echo "<li>$key:</li>";
                             foreach ($value as $especie) {
-                                echo "<li>$especie</li>";
+                                // echo "<li>$especie</li>";
+                                echo "<li>". ucfirst($key) ." => ". ucfirst($especie) ."</li>";
                             }
                         }
                     }
@@ -60,11 +68,9 @@
                         echo "<li>Nenhuma espécie cadastrada!</li>";
                     } else {
                         foreach ($_SESSION["grupos"][$grupo] as $especie) {
-                            echo "<li>$especie</li>";
+                            echo "<li>". ucfirst($especie) ."</li>";
                         }
                     }
-                } else {
-                    echo "<li>Grupo não encontrado!</li>";
                 }
             }
 

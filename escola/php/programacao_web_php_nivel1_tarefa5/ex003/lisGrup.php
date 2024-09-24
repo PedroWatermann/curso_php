@@ -22,8 +22,8 @@
                 echo "<li>Nenhum grupo cadastrado!</li>";
             } else {
                 foreach ($_SESSION["grupos"] as $key => $value) {
-                    if (is_string($value)) {
-                        echo "<li>" . ucfirst($value) . "</li>";
+                    if (is_string($key)) {
+                        echo "<li>" . ucfirst($key) . "</li>";
                     }
                 }
             }

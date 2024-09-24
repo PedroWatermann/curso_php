@@ -1,4 +1,15 @@
-<?php session_start() ?>
+<?php
+session_start();
+if (empty($_SESSION["grupos"])) {
+    echo "
+        <script>
+            alert('Cadastre um grupo primeiro!');
+            history.go(-1);
+        </script>
+    ";
+    exit;
+}
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -16,18 +27,20 @@
 
     <main>
         <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
-            <label for="grupo">Selecione um grupo animal:</label>
+            <label for="grupo">Selecione um grupo para cadasrar:</label>
             <select name="grupo" id="grupo">
-                <?php 
-                    foreach ($_SESSION["grupos"] as $key => $grupo) {
-                        echo "<option value='$grupo'>". ucfirst($grupo) ."</option>";
+                <?php
+                foreach ($_SESSION["grupos"] as $key => $value) {
+                    if (is_array($value)) {
+                        echo "<option value=\"$key\">" . ucfirst($key) . "</option>";
                     }
+                }
                 ?>
             </select>
-            <label for="especie">Espécie animal:</label>
+            <label for="especie">Espécie:</label>
             <input type="text" name="especie" id="especie">
 
-            <input type="submit" value="&plusb; Cadastrar" name="submit" id="submit" disabled="disabled">
+            <input type="submit" value="&plusb; Pesquisar" name="submit" id="submit" disabled="disabled">
         </form>
 
         <?php
